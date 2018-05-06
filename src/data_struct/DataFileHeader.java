@@ -13,10 +13,9 @@ public class DataFileHeader {
 	
 	byte [] magic = new byte[magicLen];
 	private int viewNum = 0;
+	private int xmlNum = 0;
 	
-	private int viewTablePos = magicLen + 4;
-	
-	private List<DataFileViewTableItem> itemList = new ArrayList<DataFileViewTableItem>();
+	public static final int viewTablePos = magicLen + 4 + 4 + 4;
 	
 	public DataFileHeader(String magicStr) {
 		for(int i=0; i < magicLen; i++){
@@ -27,6 +26,14 @@ public class DataFileHeader {
 		}
 	}
 	
+	public int getXmlNum() {
+		return xmlNum;
+	}
+
+	public void setXmlNum(int xmlNum) {
+		this.xmlNum = xmlNum;
+	}
+	
 	public int getViewNum(){
 		return this.viewNum;
 	}
@@ -35,59 +42,16 @@ public class DataFileHeader {
 		this.viewNum = ViewNum;
 	}
 	
-	public int getViewTablePos(){
-		return this.viewTablePos;
-	}
 	
-	public void setViewTablePos(int tablepos){
-		this.viewTablePos = tablepos;
-	}
-	
-	public List<DataFileViewTableItem> getItemList() {
-		return itemList;
-	}
-
-	public void setItemList(List<DataFileViewTableItem> itemList) {
-		this.itemList = itemList;
-	}
-	
-	public void addViewTableItem(DataFileViewTableItem item) {
-		this.itemList.add(item);
-		viewNum = this.itemList.size();
-	}
-
 	
 	public void outSelfToBin(OutputStream outputStream){
 		try {
 			outputStream.write(magic);
+			outputStream.write(CommonUtils.int2bytes(xmlNum));
 			outputStream.write(CommonUtils.int2bytes(viewNum));
 			outputStream.write(CommonUtils.int2bytes(viewTablePos));
 		} catch (IOException e) {
 			e.printStackTrace();
-		}
-	}
-	
-	public void outViewTableItemToBin(OutputStream outputStream){
-		for(int i=0; i<itemList.size();i++){
-			DataFileViewTableItem item = itemList.get(i);
-			item.outSelfToBin(outputStream);
-		}
-	}
-	
-	public void outPropertyItemToBin(OutputStream outputStream){
-		for(int i=0; i<itemList.size();i++){
-			DataFileViewTableItem item = itemList.get(i);
-			item.outPropertyListToBin(outputStream);
-		}
-	}
-	
-	public void outPropertyItemDataToBin(OutputStream outputStream){
-		for(int i=0; i<itemList.size();i++){
-			DataFileViewTableItem item = itemList.get(i);
-			List<PropertyItem> propertyItemsList = item.getPropertyItemsList();
-			for(int j=0; j<propertyItemsList.size(); j++){
-				propertyItemsList.get(j).outPropertyDataToBin(outputStream);
-			}
 		}
 	}
 	

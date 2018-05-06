@@ -9,6 +9,7 @@ import utils.CommonUtils;
 
 public class DataFileViewTableItem {
 	public static final int idLen = 16;
+	public static final int ViewTableItemSize = idLen + 4 + 4 + 4 + 4 + 4 + 4;
 	//控件id
 	private byte [] id = new byte[idLen];
 	//控件种类
@@ -39,7 +40,12 @@ public class DataFileViewTableItem {
 		return id;
 	}
 	public void setId(byte[] id) {
-		this.id = id;
+		for(int i=0; i<idLen; i++) {
+			this.id[i]=0;
+		}
+		for(int i=0; i<id.length; i++) {
+			this.id[i]=id[i];
+		}
 	}
 	public int getType() {
 		return type;
@@ -89,6 +95,10 @@ public class DataFileViewTableItem {
 	public void addPropertyItemList(PropertyItem item){
 		this.propertyItemsList.add(item);
 		this.PropertyNum = propertyItemsList.size();
+	}
+	
+	public void addPropertyPosOffset(int offset) {
+		PropertyPos += offset;
 	}
 	
 

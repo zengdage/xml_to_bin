@@ -8,7 +8,8 @@ import constant.PropertyTypeValue;
 import utils.CommonUtils;
 
 public class PropertyItem {
-	public static final int PropertyNameLen = 16;
+	public static final int PropertyNameLen = 32;
+	public static final int PropertyItemSize = PropertyNameLen + 4 + 4 + 4;
 	//控件id
 	private byte [] name = new byte[PropertyNameLen];
 	//属性数据的大小
@@ -19,7 +20,7 @@ public class PropertyItem {
 	private int PropertyDataType = Constant.DataTypeSTRING;
 	private String PropertyData = "5!!!!!";
 	
-	public PropertyItem(String nameStr, int PropertyDataType, String PropertyData, int PropertyDataSize, int PropertyDataPos) {
+	public PropertyItem(String nameStr, int PropertyDataType, String PropertyData, int PropertyDataPos) {
 		for(int i=0; i < PropertyNameLen; i++){
 			name[i] = 0;
 		}
@@ -80,6 +81,10 @@ public class PropertyItem {
 	public void setPropertyData(String propertyData) {
 		PropertyData = propertyData;
 	}
+	
+	public void addPropertyDataPosOffset(int offset) {
+		PropertyDataPos += offset;
+	}
 
 	public void outSelfToBin(OutputStream outputStream){
 		try {
@@ -98,7 +103,21 @@ public class PropertyItem {
 				int data = Integer.parseInt(PropertyData);
 				outputStream.write(CommonUtils.int2bytes(data));
 			}else if (PropertyDataType == Constant.DataTypeSTRING) {
-				outputStream.write(PropertyData.getBytes());
+				if(PropertyData.length()%4 != 0) {
+					int size = CommonUtils.alignStringTo4byte(PropertyData);
+					byte []outdata = new byte[size];
+					for(int i=0; i<outdata.length; i++ ) {
+						outdata[i] = 0;
+					}
+					for(int i=0; i<PropertyData.length(); i++ ) {
+						outdata[i]= (byte)PropertyData.charAt(i);
+					}
+					outputStream.write(outdata);
+				}else {
+					outputStream.write(PropertyData.getBytes());
+				}
+				
+				
 			}
 		} catch (IOException e) {
 			e.printStackTrace();

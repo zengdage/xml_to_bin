@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Mainwin
+    app_name="test"
+	win_id="10001"
+	win_name="mainwin1"
+	win_DataType="1"
+	win_WinType="1"
+	win_dwStyle="1"
+	win_dwExStyle="1"
+	
+	lyr_type="1"
+	lyr_status="0"
+	lyr_intersts="0"
+	lyr_clip_left="10"
+	lyr_clip_right="10"
+	lyr_clip_top="10"
+	lyr_clip_boottom="10"
+	lyr_zordeer="5"
+	
+	win_left="20"
+	win_top="20"
+	win_right="20"
+	win_bottom="20"
+	
+	win_client_left="20"
+	win_client_top="20"
+	win_client_right="20"
+	win_client_bottom="20"
+	
+	win_bkcolor="#ffffff"
+	win_font="15"
+	
+	win_invalid_left="5"
+	win_invalid_right="5"
+	win_invalid_top="5"
+	win_invalid_bottom="5"
+	
+	win_clip_left="10"
+	win_clip_right="10"
+	win_clip_top="10"
+	win_clip_boottom="10"
+	
+	win_zordeer="5"
+	
+	win_callback="windproc"
+	notify_proc="notify"
+	win_vscroll_minPos="10"
+	win_vscroll_maxPos="10"
+	win_vscroll_curPos="10"
+	win_vscroll_pageStep="10"
+	win_vscroll_barStart="10"
+	win_vscroll_barLen="10"
+	win_vscroll_status="10"
+	
+	win_hscroll_minPos="10"
+	win_hscroll_maxPos="10"
+	win_hscroll_curPos="10"
+	win_hscroll_pageStep="10"
+	win_hscroll_barStart="10"
+	win_hscroll_barLen="10"
+	win_hscroll_status="10"
+	
+	
+	>
+	<Frmwin
+		win_id="10001"
+		win_left="20"
+		win_top="20"
+		win_right="20"
+		win_bottom="20"
+		>
+		<Button
+			win_id="10001"
+			win_left="20"
+			win_top="20"
+			win_right="20"
+			win_bottom="20"
+			
+			focus_bmp="bmp1"
+			unfocus_bmp="bmp2"
+			bmp_x="10"
+			bmp_y="10"
+			txt_x="10"
+			txt_y="10"
+			txt_align="10"
+			text="hello"
+			focus_txt_color="#ffffff"
+			unfocus_txt-color="#000000"
+			font="15"
+			charset="utf-8"
+			bkcolor="#ffffff"
+			alpha="true"
+			
+			draw_sts="1"
+			status="1"
+			>
+		
+		</Button>
+	
+	</Frmwin>
+	<Mainwin
+		win_id="10001"
+		win_left="20"
+		win_top="20"
+		win_right="20"
+		win_bottom="20"
+		>
+		<Frmwin
+			win_id="10001"
+			win_left="20"
+			win_top="20"
+			win_right="20"
+			win_bottom="20"
+			>
+			<Button
+				win_id="10001"
+				focus_bmp="bmp1"
+				unfocus_bmp="bmp2"
+				bmp_x="10"
+				bmp_y="10"
+				txt_x="10"
+				txt_y="10"
+				txt_align="10"
+				focus_txt_color="#ffffff"
+				unfocus_txt-color="#000000"
+				font="15"
+				charset="utf-8"
+				bkcolor="#ffffff"
+				alpha="true"
+			>
+			</Button>
+			
+			<Button
+				win_id="10001"
+				focus_bmp="bmp1"
+				unfocus_bmp="bmp2"
+				bmp_x="10"
+				bmp_y="10"
+				txt_x="10"
+				txt_y="10"
+				>
+			</Button>	
+		</Frmwin>
+	</Mainwin>
+</Mainwin>

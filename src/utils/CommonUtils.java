@@ -54,4 +54,12 @@ public class CommonUtils {
 	    public static int bytes2int(byte[] bytes){  
 	        return bytes2intBig(bytes);  
 	    }  
+	    
+	    public static int alignStringTo4byte(String string) {
+	    	if(string.length() % 4 != 0) {
+	    		return (string.length() / 4 + 1) * 4;
+	    	}else {
+	    		return string.length();
+	    	}
+	    }
 }
