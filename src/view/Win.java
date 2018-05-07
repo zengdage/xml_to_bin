@@ -69,6 +69,25 @@ public abstract class Win {
 	public String win_spCaption;
 	public String spClassName;
 	
+	//for some wins
+	public String focus_bmp;
+	public String unfocus_bmp;
+	public int bmp_x;
+	public int bmp_y;
+	public int txt_x;
+	public int txt_y;
+	public int txt_align;
+	public String text;
+	public String focus_txt_color;
+	public String unfocus_txt_color;
+	public int font;
+	public String charset;
+	public String bkcolor;
+	public boolean alpha;
+	
+	public int draw_sts;
+	public int status;
+	
 	public abstract void setAttributeSet(AttributeSet attrs) ;
 	public abstract void outCode(Basewin win, Basewin parent, File file,PrintStream ps) ;
 	

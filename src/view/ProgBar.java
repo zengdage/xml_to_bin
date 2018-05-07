@@ -5,6 +5,8 @@ import java.io.File;
 import java.io.PrintStream;
 import java.util.HashMap;
 
+import constant.Constant;
+import data_struct.PropertyItem;
 import xmlpulldemo.AttributeSet;
 import xmlpulldemo.ParamValue;
 import xmlpulldemo.YDResource;
@@ -67,66 +69,26 @@ public class ProgBar extends Basewin{
 		super.setAttributeSet(attrs);
 		HashMap<String,ParamValue> map=YDResource.getInstance().getBasewinMap();	
 		int count =attrs.getAttributeCount();
+		int propertyCount = 0;
 		for(int i=0;i<count ;i++){
 			ParamValue key=map.get(attrs.getAttributeName(i));
 			if(key==null){
 				continue;
 			}
+			PropertyItem item = null;
 			switch (key) {
-			case focus_bmp:
-				this.focus_bmp=YDResource.getInstance().getString(attrs.getAttributeValue(i));
-				break;
-			case unfocus_bmp:
-				this.unfocus_bmp=YDResource.getInstance().getString(attrs.getAttributeValue(i));
-				break;
-			case bmp_x:
-				this.bmp_x=attrs.getAttributeIntValue(i, 0);
-				break;
-			case bmp_y:
-				this.bmp_y=attrs.getAttributeIntValue(i, 0);
-				break;
-			case txt_x:
-				this.txt_x=attrs.getAttributeIntValue(i, 0);
-				break;
-			case txt_y:
-				this.txt_y=attrs.getAttributeIntValue(i, 0);
-				break;
-			case txt_align:
-				this.txt_align=attrs.getAttributeIntValue(i, 0);
-				break;
-			case text:
-				this.text=YDResource.getInstance().getString(attrs.getAttributeValue(i));
-				break;
-			case focus_txt_color:
-				this.focus_txt_color=YDResource.getInstance().getString(attrs.getAttributeValue(i));
-				break;
-			case unfocus_txt_color:
-				this.unfocus_txt_color=YDResource.getInstance().getString(attrs.getAttributeValue(i));
-				break;
-			case font:
-				this.font=attrs.getAttributeIntValue(i, 0);
-				break;
-			case charset:
-				this.charset=YDResource.getInstance().getString(attrs.getAttributeValue(i));
-				break;
-			case bkcolor:
-				this.bkcolor=YDResource.getInstance().getString(attrs.getAttributeValue(i));
-				break;
-			case alpha:
-				this.alpha=attrs.getAttributeBooleanValue(i, true);
-				break;
-				
-			case draw_sts:
-				this.draw_sts=attrs.getAttributeIntValue(i, 0);
-				break;
-			case status:
-				this.status=attrs.getAttributeIntValue(i, 0);
-				break;
-				
+			
 			default:
 				break;
 			}
+			if (item != null) {
+				viewTableItem.addPropertyItemList(item);
+			}
     	}
+		Constant.propertyTableItemPos += propertyCount * PropertyItem.PropertyItemSize;
+		viewTableItem.setType(Constant.TypeProgBar);
+		viewTableItem.setDirectSubChildItem(getDirectSubchildItem());
+		viewTableItem.setPropertySize(viewTableItem.getPropertyNum() * PropertyItem.PropertyItemSize);
     }
 	
 	@Override
