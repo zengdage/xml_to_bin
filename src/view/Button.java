@@ -6,6 +6,7 @@ import java.util.HashMap;
 
 import constant.Constant;
 import data_struct.PropertyItem;
+import resource.ParseThemeHeadFile;
 import utils.CommonUtils;
 import xmlpulldemo.AttributeSet;
 import xmlpulldemo.ParamValue;
@@ -79,18 +80,21 @@ public class Button extends Basewin{
 			switch (key) {
 			case focus_bmp:
 				this.focus_bmp=YDResource.getInstance().getString(attrs.getAttributeValue(i));
+				
+				int focus_bmp_data = ParseThemeHeadFile.getHashMapValue(this.focus_bmp);
 				item = new PropertyItem(attrs.getAttributeName(i), 
-						Constant.DataTypeSTRING, 
-						this.focus_bmp, Constant.propertyDataPos);
-				Constant.propertyDataPos += CommonUtils.alignStringTo4byte(this.focus_bmp);
+						Constant.DataTypeINT, 
+						String.valueOf(focus_bmp_data), Constant.propertyDataPos);
+				Constant.propertyDataPos += 4;
 				propertyCount++;
 				break;
 			case unfocus_bmp:
 				this.unfocus_bmp=YDResource.getInstance().getString(attrs.getAttributeValue(i));
+				int unfocus_bmp_data = ParseThemeHeadFile.getHashMapValue(this.unfocus_bmp);
 				item = new PropertyItem(attrs.getAttributeName(i), 
-						Constant.DataTypeSTRING, 
-						this.unfocus_bmp, Constant.propertyDataPos);
-				Constant.propertyDataPos += CommonUtils.alignStringTo4byte(this.unfocus_bmp);
+						Constant.DataTypeINT, 
+						String.valueOf(unfocus_bmp_data), Constant.propertyDataPos);
+				Constant.propertyDataPos += 4;
 				propertyCount++;
 				break;
 			case bmp_x:
@@ -135,10 +139,12 @@ public class Button extends Basewin{
 				break;
 			case text:
 				this.text=YDResource.getInstance().getString(attrs.getAttributeValue(i));
+	
+				int text = ParseThemeHeadFile.getHashMapValue(this.text);
 				item = new PropertyItem(attrs.getAttributeName(i), 
-						Constant.DataTypeSTRING, 
-						this.text, Constant.propertyDataPos);
-				Constant.propertyDataPos += CommonUtils.alignStringTo4byte(this.text);
+						Constant.DataTypeINT, 
+						String.valueOf(text), Constant.propertyDataPos);
+				Constant.propertyDataPos += 4;
 				propertyCount++;
 				break;
 			case focus_txt_color:

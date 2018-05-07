@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Button
 	win_id="home_win"
-	focus_bmp="ID_HOME_NEW_TV_FC_BMP"
+	focus_bmp="ID_HOME_NEW_TV_UF_BMP"
 	unfocus_bmp="ID_HOME_NEW_TV_UF_BMP"
+	bmp_x="10"
+	bmp_y="10"
 >
 </Button>

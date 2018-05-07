@@ -21,12 +21,8 @@ public class Basewin extends Win{
 	public Params params;
 	
 	public List<Basewin> child_list = new ArrayList<Basewin>();
-	
-	//private List<PropertyItem> propertyItemList = new ArrayList<PropertyItem>();
-	
+
 	protected DataFileViewTableItem viewTableItem = new DataFileViewTableItem("");
-
-
 
 	public Basewin(AttributeSet attrs) {
 		setAttributeSet(attrs);

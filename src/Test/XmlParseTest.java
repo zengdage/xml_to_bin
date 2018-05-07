@@ -5,15 +5,21 @@ import java.io.FileOutputStream;
 import java.io.OutputStream;
 
 import data_struct.DataFile;
+import resource.ParseLangHeadFile;
+import resource.ParseThemeHeadFile;
 
 public class XmlParseTest {
 
 	public static void main(String[] args) {
+		
+		ParseThemeHeadFile.parseThemeHeadFile("theme.h");
+		ParseLangHeadFile.parseLangHeadFile("lang.h");
+		
 		DataFile dataFile = new DataFile();
 		dataFile.parse_xml("home.xml");
 		//dataFile.parse_xml("layout.xml");
 		
-		File file = new File("view.data") ; // 建立文件
+		File file = new File("view_data") ; // 建立文件
 		try {
 			OutputStream outputStream = new FileOutputStream(file);
 			dataFile.outToBin(outputStream);
@@ -24,5 +30,7 @@ public class XmlParseTest {
 			e.printStackTrace();
 		}
 	}
+	
+	
 
 }
