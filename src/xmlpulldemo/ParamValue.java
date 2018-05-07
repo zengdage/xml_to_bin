@@ -81,5 +81,10 @@ public enum ParamValue {
 			app_name,
 			win_spCaption,
 			win_spClassName,
+			
+			bmp_num,
+			bmp_array,
+			pos_num,
+			pos_array
 	;
 }

@@ -1,9 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Button
+<Mainwin
 	win_id="home_win"
 	focus_bmp="ID_HOME_NEW_TV_UF_BMP"
 	unfocus_bmp="ID_HOME_NEW_TV_UF_BMP"
+	bmp_num="8"
+	bmp_array="ID_HOME_NEW_TV_UF_BMP,ID_HOME_NEW_MOVIE_UF_BMP,ID_HOME_NEW_MUSIC_UF_BMP,ID_HOME_NEW_PICTURE_UF_BMP,ID_HOME_NEW_EBOOK_UF_BMP,ID_HOME_NEW_FM_UF_BMP,ID_HOME_NEW_RECORD_UF_BMP,ID_HOME_NEW_SETTING_UF_BMP"
 	bmp_x="10"
 	bmp_y="10"
 >
-</Button>
+
+<Mainwin
+	win_id="gg_win"
+	focus_bmp="ID_HOME_NEW_TV_UF_BMP"
+	unfocus_bmp="ID_HOME_NEW_TV_UF_BMP"
+	bmp_num="2"
+	bmp_array="
+	(ID_HOME_NEW_TV_UF_BMP),
+	(ID_HOME_NEW_MOVIE_UF_BMP)"
+	pos_num="2"
+	pos_array="(10,2),(10,3)"
+>
+</Mainwin>
+
+</Mainwin>

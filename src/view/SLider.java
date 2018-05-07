@@ -13,24 +13,6 @@ import xmlpulldemo.YDResource;
 
 public class SLider extends Basewin{
 
-	String focus_bmp;
-	String unfocus_bmp;
-	int bmp_x;
-	int bmp_y;
-	int txt_x;
-	int txt_y;
-	int txt_align;
-	String text;
-	String focus_txt_color;
-	String unfocus_txt_color;
-	int font;
-	String charset;
-	String bkcolor;
-	boolean alpha;
-	
-	int draw_sts;
-	int status;
-	
 	public SLider(AttributeSet attrs) {
 		super(attrs);
 	}

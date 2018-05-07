@@ -58,7 +58,7 @@ public class ParseLangHeadFile {
                 			try {
                 				String num = arr[2].substring(2);
                 				addHashMap(arr[1], Integer.parseInt(num, 16));
-                    			System.out.println(arr[0]+ " "+arr[1]+" "+arr[2]);
+                    			//System.out.println(arr[0]+ " "+arr[1]+" "+arr[2]);
 							} catch (Exception e) {
 								e.printStackTrace();
 								System.out.println("error:"+arr[1]);
@@ -75,7 +75,7 @@ public class ParseLangHeadFile {
                 			try {
                 				String num = arr[2].substring(2);
                 				addLangTypeHashMap(arr[1], Integer.parseInt(num, 16));
-                    			System.out.println(arr[0]+ " "+arr[1]+" "+arr[2]);
+                    			//System.out.println(arr[0]+ " "+arr[1]+" "+arr[2]);
 							} catch (Exception e) {
 								e.printStackTrace();
 								System.out.println("error:"+arr[1]);

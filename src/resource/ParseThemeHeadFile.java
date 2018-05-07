@@ -46,7 +46,7 @@ public class ParseThemeHeadFile {
                 		if(arr.length == 3) {
                 			try {
                 				addHashMap(arr[1], Integer.valueOf(arr[2]));
-                    			System.out.println(arr[0]+ " "+arr[1]+" "+arr[2]);
+                    			//System.out.println(arr[0]+ " "+arr[1]+" "+arr[2]);
 							} catch (Exception e) {
 								e.printStackTrace();
 								System.out.println("error:"+arr[1]);

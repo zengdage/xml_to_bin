@@ -12,24 +12,6 @@ import xmlpulldemo.YDResource;
 
 public class SpinBox extends Basewin{
 
-	String focus_bmp;
-	String unfocus_bmp;
-	int bmp_x;
-	int bmp_y;
-	int txt_x;
-	int txt_y;
-	int txt_align;
-	String text;
-	String focus_txt_color;
-	String unfocus_txt_color;
-	int font;
-	String charset;
-	String bkcolor;
-	boolean alpha;
-	
-	int draw_sts;
-	int status;
-	
 	public SpinBox(AttributeSet attrs) {
 		super(attrs);
 	}

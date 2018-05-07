@@ -6,6 +6,8 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import constant.Constant;
 import data_struct.DataFileViewTableItem;
@@ -60,10 +62,10 @@ public class Basewin extends Win{
 		HashMap<String,ParamValue> map=YDResource.getInstance().getBasewinMap();	
 		int count =attrs.getAttributeCount();
 		int propertyCount = viewTableItem.getPropertyNum();
-		System.out.println("propertyCount = "+ propertyCount);
+
 		for(int i=0;i<count ;i++){
 			ParamValue key=map.get(attrs.getAttributeName(i));
-			System.out.println(attrs.getAttributeName(i));
+			//System.out.println(attrs.getAttributeName(i));
 			if(key==null){
 				System.out.println("error:"+attrs.getAttributeName(i));
 				continue;
@@ -620,7 +622,87 @@ public class Basewin extends Win{
 				Constant.propertyDataPos += 4;
 				propertyCount++;
 				break;
-	
+			case bmp_num:
+				this.bmp_num=attrs.getAttributeIntValue(i, 0);
+				item = new PropertyItem(attrs.getAttributeName(i), 
+						Constant.DataTypeINT, 
+						String.valueOf(this.bmp_num), Constant.propertyDataPos);
+				Constant.propertyDataPos += 4;
+				propertyCount++;
+				break;
+			case bmp_array:
+				this.bmp_array=YDResource.getInstance().getString(attrs.getAttributeValue(i));
+					
+				Pattern pattern = Pattern.compile("(?<=\\()[^\\)]+");  
+				Matcher matcher = pattern.matcher(this.bmp_array);
+				List<String> strList = new ArrayList<String>();
+				while(matcher.find()){
+					strList.add(matcher.group());
+					//System.out.println(matcher.group());
+				}
+				String []bmp_arr = strList.toArray(new String[0]);
+				
+				if(bmp_arr.length == 0) {
+					bmp_arr = this.bmp_array.split(",");
+				}
+		
+				if(bmp_arr.length == this.bmp_num) {
+					StringBuffer bmp_out = new StringBuffer();
+					for(int j=0; j<bmp_arr.length-1; j++) {
+						int num = ParseThemeHeadFile.getHashMapValue(bmp_arr[j]);
+						bmp_out.append(num+",");
+					}
+					bmp_out.append(ParseThemeHeadFile.getHashMapValue(bmp_arr[bmp_arr.length-1]));
+					
+					item = new PropertyItem(attrs.getAttributeName(i), 
+							Constant.DataTypeSTRING, 
+							bmp_out.toString(), Constant.propertyDataPos);
+					Constant.propertyDataPos += CommonUtils.alignStringTo4byte(bmp_out.toString());
+					propertyCount++;
+				}	
+				break;
+				
+			case pos_num:
+				this.pos_num=attrs.getAttributeIntValue(i, 0);
+				item = new PropertyItem(attrs.getAttributeName(i), 
+						Constant.DataTypeINT, 
+						String.valueOf(this.pos_num), Constant.propertyDataPos);
+				Constant.propertyDataPos += 4;
+				propertyCount++;
+				break;
+			case pos_array:
+				this.pos_array=YDResource.getInstance().getString(attrs.getAttributeValue(i));
+					
+				Pattern pattern1 = Pattern.compile("(?<=\\()[^\\)]+");  
+				Matcher matcher1 = pattern1.matcher(this.pos_array);
+				List<String> strList1 = new ArrayList<String>();
+				while(matcher1.find()){
+					strList1.add(matcher1.group());
+					//System.out.println(matcher1.group());
+				}
+				String []bmp_arr1 = strList1.toArray(new String[0]);
+				
+				if(bmp_arr1.length == this.pos_num) {
+					StringBuffer bmp_out = new StringBuffer();
+					for(int j=0; j<bmp_arr1.length-1; j++) {
+						String [] xy_array = bmp_arr1[j].split(",");
+						for(int k=0; k<xy_array.length;k++) {
+							bmp_out.append(Integer.valueOf(xy_array[k])+",");
+						}	
+					}
+					
+					String [] xy_array = bmp_arr1[bmp_arr1.length-1].split(",");
+					bmp_out.append(Integer.valueOf(xy_array[0])+",");
+					bmp_out.append(Integer.valueOf(xy_array[1]));
+
+					item = new PropertyItem(attrs.getAttributeName(i), 
+							Constant.DataTypeSTRING, 
+							bmp_out.toString(), Constant.propertyDataPos);
+					Constant.propertyDataPos += CommonUtils.alignStringTo4byte(bmp_out.toString());
+					propertyCount++;
+					System.out.println("pos_array:"+bmp_out.toString());
+				}
+				break;
 			default:
 				System.out.println("default:"+attrs.getAttributeName(i));
 				break;

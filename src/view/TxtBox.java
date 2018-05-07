@@ -15,28 +15,8 @@ public class TxtBox extends Basewin{
 
 	public TxtBox(AttributeSet attrs) {
 		super(attrs);
-		// TODO Auto-generated constructor stub
 	}
 
-	String focus_bmp;
-	String unfocus_bmp;
-	int bmp_x;
-	int bmp_y;
-	int txt_x;
-	int txt_y;
-	int txt_align;
-	String text;
-	String focus_txt_color;
-	String unfocus_txt_color;
-	int font;
-	String charset;
-	String bkcolor;
-	boolean alpha;
-	
-	int draw_sts;
-	int status;
-
-	
 	@Override
 	public void showSelf(String space) {
 		super.showSelf(space);

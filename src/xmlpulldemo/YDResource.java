@@ -228,6 +228,12 @@ public class YDResource {
 			map.put("win_spCaption",ParamValue.win_spCaption);
 			map.put("win_spClassName",ParamValue.win_spClassName);
 			
+			map.put("bmp_num",ParamValue.bmp_num);
+			map.put("bmp_array",ParamValue.bmp_array);
+			
+			map.put("pos_num",ParamValue.pos_num);
+			map.put("pos_array",ParamValue.pos_array);
+			
 			wkBasewinMap=new SoftReference<HashMap<String,ParamValue>>(map);
 
 		}

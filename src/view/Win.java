@@ -88,6 +88,13 @@ public abstract class Win {
 	public int draw_sts;
 	public int status;
 	
+	
+	public int bmp_num;
+	public String bmp_array;
+	
+	public int pos_num;
+	public String pos_array;
+	
 	public abstract void setAttributeSet(AttributeSet attrs) ;
 	public abstract void outCode(Basewin win, Basewin parent, File file,PrintStream ps) ;
 	
