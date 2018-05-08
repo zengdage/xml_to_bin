@@ -12,6 +12,7 @@ public class Constant {
 	  
 	  public static int propertyTableItemPos = 0;
 	  public static int propertyDataPos = 0;
+	  public static int viewTableItemPos = 0;
 	  
 	  
 	  public final static int TypeBasewin = 1;

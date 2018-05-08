@@ -54,11 +54,21 @@ public class DataFile {
 		
 		for(int i=0; i<xmlNum;i++) {
 			DataFileXmlItem item = itemList.get(i);
-			item.addPropertyPosOffset(DataFileHeader.viewTablePos + 
+			item.addPropertyPosOffset(DataFileHeader.xmlTablePos + 
+					DataFileXmlItem.XmlItemSize * xmlNum +
 					DataFileViewTableItem.ViewTableItemSize * viewNum);
-			item.addPropertyPosDataOffset(DataFileHeader.viewTablePos +
+			item.addPropertyPosDataOffset(DataFileHeader.xmlTablePos +
+					DataFileXmlItem.XmlItemSize * xmlNum +
 					DataFileViewTableItem.ViewTableItemSize * viewNum +
 					PropertyItem.PropertyItemSize * propertyNum);
+			
+			item.addViewTableItemPosOffset(DataFileHeader.xmlTablePos + 
+					DataFileXmlItem.XmlItemSize * xmlNum);
+		}
+		
+		for(int i=0; i<xmlNum;i++) {
+			DataFileXmlItem item = itemList.get(i);
+			item.outSelfToBin(outputStream);
 		}
 		
 		for(int i=0; i<xmlNum;i++) {
@@ -82,7 +92,9 @@ public class DataFile {
 		DataFileXmlItem xmlItem = new DataFileXmlItem();
 		Basewin basewin = Inflate.getLayout(xmlItem,xmlfile);
 		xmlItem.setBasewin(basewin);
-		xmlItem.setXmlPath(xmlfile);
+		xmlItem.setXmlPath(xmlfile.getBytes());
+		xmlItem.setView_table_pos(Constant.viewTableItemPos);
+		Constant.viewTableItemPos += xmlItem.getItemList().size() * DataFileViewTableItem.ViewTableItemSize;
 		itemList.add(xmlItem);
 		winList.add(basewin);
 	}

@@ -17,6 +17,7 @@ public class XmlParseTest {
 		
 		DataFile dataFile = new DataFile();
 		dataFile.parse_xml("home.xml");
+		dataFile.parse_xml("home2.xml");
 		//dataFile.parse_xml("layout.xml");
 		
 		File file = new File("view_data") ; // 建立文件

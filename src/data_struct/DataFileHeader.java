@@ -15,7 +15,7 @@ public class DataFileHeader {
 	private int viewNum = 0;
 	private int xmlNum = 0;
 	
-	public static final int viewTablePos = magicLen + 4 + 4 + 4;
+	public static final int xmlTablePos = magicLen + 4 + 4 + 4;
 	
 	public DataFileHeader(String magicStr) {
 		for(int i=0; i < magicLen; i++){
@@ -49,7 +49,7 @@ public class DataFileHeader {
 			outputStream.write(magic);
 			outputStream.write(CommonUtils.int2bytes(xmlNum));
 			outputStream.write(CommonUtils.int2bytes(viewNum));
-			outputStream.write(CommonUtils.int2bytes(viewTablePos));
+			outputStream.write(CommonUtils.int2bytes(xmlTablePos));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

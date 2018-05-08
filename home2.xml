@@ -9,32 +9,7 @@
 	bmp_y="10"
 >
 
-<Mainwin
-	win_id="gg_win"
-	focus_bmp="ID_HOME_NEW_TV_UF_BMP"
-	unfocus_bmp="ID_HOME_NEW_TV_UF_BMP"
-	bmp_num="2"
-	bmp_array="
-	(ID_HOME_NEW_TV_UF_BMP),
-	(ID_HOME_NEW_MOVIE_UF_BMP)"
-	pos_num="2"
-	pos_array="(10,2),(10,3)"
->
-</Mainwin>
-
-<Mainwin
-	win_id="kk"
-	focus_bmp="ID_HOME_NEW_TV_UF_BMP"
-	unfocus_bmp="ID_HOME_NEW_TV_UF_BMP"
-	bmp_num="2"
-	bmp_array="
-	(ID_HOME_NEW_TV_UF_BMP),
-	(ID_HOME_NEW_MOVIE_UF_BMP)"
-	pos_num="2"
-	pos_array="(10,2),(10,3)"
->
-
-<Mainwin
+<Button
 	win_id="main1"
 	focus_bmp="ID_HOME_NEW_TV_UF_BMP"
 	unfocus_bmp="ID_HOME_NEW_TV_UF_BMP"
@@ -45,9 +20,9 @@
 	pos_num="2"
 	pos_array="(10,2),(10,3)"
 >
-</Mainwin>
+</Button>
 
 
-</Mainwin>
+
 
 </Mainwin>
