@@ -8,7 +8,7 @@ import java.util.List;
 import utils.CommonUtils;
 
 public class DataFileViewTableItem {
-	public static final int idLen = 16;
+	public static final int idLen = 32;
 	public static final int ViewTableItemSize = idLen + 4 + 4 + 4 + 4 + 4 + 4;
 	//¿Ø¼þid
 	private byte [] id = new byte[idLen];

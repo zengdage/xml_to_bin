@@ -10,7 +10,7 @@ import view.Basewin;
 
 public class DataFileXmlItem {
 	private List<DataFileViewTableItem> itemList = new ArrayList<DataFileViewTableItem>();
-	public static final int PathLen = 16;
+	public static final int PathLen = 32;
 	private Basewin basewin;
 	private byte []xmlPath = new byte[PathLen];
 	private int view_table_pos = 0;
