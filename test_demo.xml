@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Mainwin
+	win_id="10001"
+	win_name="mainwin1"
+	win_callback="htouch_mainwin_cb"
+	
+	>
+	
+    <Lyrwin
+    	win_id="lyrwin1"
+    	win_name="name_lyrwin"
+    	pipe="1"
+    	scn_win_x="0"
+    	scn_win_y="0"
+    	scn_win_width="800"
+    	scn_win_height="480"
+    	
+    	src_win_x="0"
+    	src_win_y="0"
+    	src_win_width="800"
+    	src_win_heigth="480"
+    	
+    	fb_size_width="800"
+    	fb_size_height="480"
+    	
+		lyrwin_type="0"
+		lyrwin_sta="1"
+    	
+    	layer_work_modet="0"
+	    disp_ck_modet="0"
+
+	    alpha_en="0"
+	    alpha_val="0"
+	    channel="0"
+	    prio="255"
+    >
+    
+    
+    
+    
+    </Lyrwin>
+
+	
+</Mainwin>
