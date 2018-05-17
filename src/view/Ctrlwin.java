@@ -32,7 +32,6 @@ public class Ctrlwin extends Basewin{
 			switch (key) {
 			case win_spCaption:
 				this.win_spCaption=YDResource.getInstance().getString(attrs.getAttributeValue(i));
-				this.win_spCaption=YDResource.getInstance().getString(attrs.getAttributeValue(i));
 				item = new PropertyItem(attrs.getAttributeName(i), 
 						Constant.DataTypeSTRING, 
 						this.win_spCaption, Constant.propertyDataPos);
@@ -41,7 +40,6 @@ public class Ctrlwin extends Basewin{
 				break;
 			case win_spClassName:
 				this.spClassName=YDResource.getInstance().getString(attrs.getAttributeValue(i));
-				this.win_spCaption=YDResource.getInstance().getString(attrs.getAttributeValue(i));
 				item = new PropertyItem(attrs.getAttributeName(i), 
 						Constant.DataTypeSTRING, 
 						this.spClassName, Constant.propertyDataPos);

@@ -234,6 +234,33 @@ public class YDResource {
 			map.put("pos_num",ParamValue.pos_num);
 			map.put("pos_array",ParamValue.pos_array);
 			
+			map.put("layer_work_mode_t",ParamValue.layer_work_mode_t);
+			map.put("disp_ck_modet",ParamValue.disp_ck_modet);
+			map.put("pipe",ParamValue.pipe);
+			map.put("alpha_en",ParamValue.alpha_en);
+			
+			map.put("alpha_val",ParamValue.alpha_val);
+			map.put("scn_win_x",ParamValue.scn_win_x);
+			map.put("scn_win_y",ParamValue.scn_win_y);
+			map.put("scn_win_width",ParamValue.scn_win_width);
+			map.put("scn_win_height",ParamValue.scn_win_height);
+			map.put("src_win_x",ParamValue.src_win_x);
+			map.put("src_win_y",ParamValue.src_win_y);
+			map.put("src_win_width",ParamValue.src_win_width);
+			map.put("src_win_heigth",ParamValue.src_win_heigth);
+			
+			map.put("channel",ParamValue.channel);
+			map.put("fb_size_width",ParamValue.fb_size_width);
+			map.put("fb_size_height",ParamValue.fb_size_height);
+			map.put("fb_add0",ParamValue.fb_add0);
+			map.put("fb_add1",ParamValue.fb_add1);
+			map.put("fb_add2",ParamValue.fb_add2);
+			map.put("fb_type",ParamValue.fb_type);
+			
+			map.put("lyrwin_sta",ParamValue.lyrwin_sta);
+			map.put("lyrwin_type",ParamValue.lyrwin_type);
+			map.put("prio",ParamValue.prio);
+			
 			wkBasewinMap=new SoftReference<HashMap<String,ParamValue>>(map);
 
 		}

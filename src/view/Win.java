@@ -28,6 +28,9 @@ public abstract class Win {
 	public int win_right;
 	public int win_bottom;
 	
+	public int win_width;
+	public int win_heigth;
+	
 	public int win_client_left;
 	public int win_client_top;
 	public int win_client_right;
@@ -87,7 +90,6 @@ public abstract class Win {
 	
 	public int draw_sts;
 	public int status;
-	
 	
 	public int bmp_num;
 	public String bmp_array;

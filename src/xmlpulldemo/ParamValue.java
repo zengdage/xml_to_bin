@@ -85,6 +85,33 @@ public enum ParamValue {
 			bmp_num,
 			bmp_array,
 			pos_num,
-			pos_array
+			pos_array,
+			
+			
+			layer_work_mode_t,
+			disp_ck_modet,
+			pipe,
+			alpha_en,
+			alpha_val,
+			scn_win_x,
+			scn_win_y,
+			scn_win_width,
+			scn_win_height,
+			src_win_x,
+			src_win_y,
+			src_win_width,
+			src_win_heigth,
+			
+			channel,
+			fb_size_width,
+			fb_size_height,
+			fb_add0,
+			fb_add1,
+			fb_add2,
+			fb_type,
+			
+			lyrwin_sta,
+			lyrwin_type,
+			prio,
 	;
 }
