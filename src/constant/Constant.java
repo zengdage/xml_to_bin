@@ -36,7 +36,7 @@ public class Constant {
 	  public final static int TypeTxtBox = 17;
 	  public final static int TypeWin = 18;
 	  
-	  public final static int TypeLyrWin = 18;
+	  public final static int TypeLyrWin = 19;
 	  
 	  public final static String magicStr="view666";
 

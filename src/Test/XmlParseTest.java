@@ -16,9 +16,10 @@ public class XmlParseTest {
 		ParseLangHeadFile.parseLangHeadFile("lang.h");
 		
 		DataFile dataFile = new DataFile();
-		dataFile.parse_xml("home.xml");
-		dataFile.parse_xml("home2.xml");
+		//dataFile.parse_xml("home.xml");
+		//dataFile.parse_xml("home2.xml");
 		//dataFile.parse_xml("layout.xml");
+		dataFile.parse_xml("test_demo.xml");
 		
 		File file = new File("view_data") ; // 建立文件
 		try {

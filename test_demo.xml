@@ -2,7 +2,6 @@
 <Mainwin
 	win_id="10001"
 	win_name="mainwin1"
-	win_callback="htouch_mainwin_cb"
 	
 	>
 	
@@ -24,16 +23,51 @@
     	fb_size_height="480"
     	
 		lyrwin_type="0"
-		lyrwin_sta="1"
+		lyrwin_sta="0"
     	
-    	layer_work_modet="0"
-	    disp_ck_modet="0"
+    	layer_work_mode_t="0"
+	    disp_ck_mode_t="0"
 
 	    alpha_en="0"
 	    alpha_val="0"
 	    channel="0"
 	    prio="255"
     >
+    
+    	<Frmwin
+    		win_dwStyle="1"
+    		win_dwExStyle="0"
+    		win_callback="htouch_frmwin_cb"
+    		win_id="frmwin1"
+    		win_name="frmwin_name"
+    		win_left="0"
+    		win_top="0"
+    		win_right="800"
+    		win_bottom="480"
+    		>
+    		
+    		<Button
+    		    win_id="button1"
+    		    win_name="ctrl_button"
+    		    focus_bmp="ID_HOME_NEW_EXPLORER_FC_BMP"
+	            unfocus_bmp="ID_HOME_NEW_MUSIC_FC_BMP"
+    		    bmp_x="20"
+    		    bmp_y="100"
+    		    txt_x="100"
+    		    win_left="0"
+    		    win_top="0"
+    		    win_right="800"
+    		    win_bottom="480"
+    		    win_spClassName="CTRLBUTTON"
+    		    win_dwStyle="1"
+    		    win_callback="button_cb"
+    		    status="0"
+    		>
+    		</Button>
+    		
+    		
+    
+    	</Frmwin>
     
     
     

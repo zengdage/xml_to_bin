@@ -47,6 +47,7 @@ public class Ctrlwin extends Basewin{
 				propertyCount++;
 				break;
 			default:
+				
 				break;
 			}
 			if (item != null) {

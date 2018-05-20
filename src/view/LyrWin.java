@@ -10,7 +10,7 @@ import xmlpulldemo.AttributeSet;
 import xmlpulldemo.ParamValue;
 import xmlpulldemo.YDResource;
 
-public class LyrWin extends Basewin{
+public class Lyrwin extends Basewin{
 
 	public int layer_work_mode_t;
 	public int disp_ck_modet;
@@ -39,7 +39,7 @@ public class LyrWin extends Basewin{
 	
 	public int prio;
 	
-	public LyrWin(AttributeSet attrs) {
+	public Lyrwin(AttributeSet attrs) {
 		super(attrs);
 	}
 	

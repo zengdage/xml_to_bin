@@ -12,6 +12,7 @@ import java.util.regex.Pattern;
 import constant.Constant;
 import data_struct.DataFileViewTableItem;
 import data_struct.PropertyItem;
+import resource.ParseIDHeadFile;
 import resource.ParseThemeHeadFile;
 import utils.CommonUtils;
 import xmlpulldemo.AttributeSet;
@@ -90,10 +91,17 @@ public class Basewin extends Win{
 				break;
 			case win_name:
 				this.win_name=YDResource.getInstance().getString(attrs.getAttributeValue(i));
+//				item = new PropertyItem(attrs.getAttributeName(i), 
+//						Constant.DataTypeSTRING, 
+//						this.win_name, Constant.propertyDataPos);
+//				Constant.propertyDataPos += CommonUtils.alignStringTo4byte(this.win_name);
+//				propertyCount++;
+				
+				int win_name_data = ParseIDHeadFile.getHashMapValue(this.win_name);
 				item = new PropertyItem(attrs.getAttributeName(i), 
-						Constant.DataTypeSTRING, 
-						this.win_name, Constant.propertyDataPos);
-				Constant.propertyDataPos += CommonUtils.alignStringTo4byte(this.win_name);
+						Constant.DataTypeINT, 
+						String.valueOf(win_name_data), Constant.propertyDataPos);
+				Constant.propertyDataPos += 4;
 				propertyCount++;
 				break;
 			case win_DataType:

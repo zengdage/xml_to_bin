@@ -235,7 +235,7 @@ public class YDResource {
 			map.put("pos_array",ParamValue.pos_array);
 			
 			map.put("layer_work_mode_t",ParamValue.layer_work_mode_t);
-			map.put("disp_ck_modet",ParamValue.disp_ck_modet);
+			map.put("disp_ck_mode_t",ParamValue.disp_ck_modet);
 			map.put("pipe",ParamValue.pipe);
 			map.put("alpha_en",ParamValue.alpha_en);
 			
